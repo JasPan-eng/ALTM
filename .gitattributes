@@ -1,0 +1,8 @@
+# Keep source files LF in the repo and the working copy (Windows checkout otherwise flips them to CRLF).
+* text=auto eol=lf
+*.webp binary
+*.gif binary
+*.spz binary
+*.ply binary
+*.splat binary
+*.ksplat binary

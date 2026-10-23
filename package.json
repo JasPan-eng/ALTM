@@ -1,0 +1,19 @@
+{
+  "name": "altm-hay-splat",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@sparkjsdev/spark": "^2.4.0",
+    "lil-gui": "^0.20.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0"
+  }
+}

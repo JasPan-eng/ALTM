@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ALTM — hay splat viewer</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --fg: #e8e4dc;
+        --bg: #141311;
+      }
+      html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font: 13px/1.4 ui-monospace, Menlo, Consolas, monospace; }
+      #app { position: fixed; inset: 0; }
+      canvas { display: block; }
+      #status {
+        position: fixed; left: 16px; bottom: 16px; padding: 8px 12px;
+        background: rgba(20, 19, 17, 0.7); border: 1px solid rgba(232, 228, 220, 0.15); border-radius: 6px;
+        pointer-events: none; white-space: pre; max-width: calc(100vw - 32px);
+      }
+      #drop {
+        position: fixed; inset: 0; display: none; place-items: center;
+        background: rgba(20, 19, 17, 0.6); border: 2px dashed rgba(232, 228, 220, 0.5);
+        font-size: 18px; pointer-events: none;
+      }
+      body.dragging #drop { display: grid; }
+
+      /* ---- look pass (Chunk G): grain, vignette, HUD ---- */
+      .look-grain {
+        position: fixed; inset: -64px; pointer-events: none; z-index: 5;
+        background-repeat: repeat; background-size: 243px 243px;
+        mix-blend-mode: overlay; opacity: 0.18;
+        animation: look-grain 1s steps(6) infinite;
+      }
+      @keyframes look-grain {
+        0% { transform: translate(0, 0); } 20% { transform: translate(-22px, 14px); }
+        40% { transform: translate(18px, -30px); } 60% { transform: translate(-34px, -8px); }
+        80% { transform: translate(26px, 22px); } 100% { transform: translate(0, 0); }
+      }
+      .look-vignette {
+        --vignette-amount: 0.55; --vignette-start: 55%;
+        position: fixed; inset: 0; pointer-events: none; z-index: 4;
+        background: radial-gradient(ellipse at center, transparent var(--vignette-start), rgba(0, 0, 0, var(--vignette-amount)) 100%);
+      }
+      #hud { position: fixed; inset: 0; pointer-events: none; z-index: 6; }
+      #status { z-index: 7; }
+      .lil-gui { z-index: 8 !important; }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="status">loading…</div>
+    <div id="drop">drop a .spz / .ply / .splat / .ksplat file</div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

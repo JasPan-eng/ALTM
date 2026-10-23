@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.vite/
+*.log
+.DS_Store
+Thumbs.db
+
+# Large splat captures: keep them out of git, drop them in public/splats/ locally.
+public/splats/*.spz
+public/splats/*.ply
+public/splats/*.splat
+public/splats/*.ksplat
