@@ -6,6 +6,8 @@ Web Gaussian-splat piece about hay. Reference and plan: [romanpillai-splat-break
 
 Moodboard: [reference/moodboard.webp](reference/moodboard.webp).
 
+**Live site**: https://jaspan-eng.github.io/ALTM/ — built and deployed by [.github/workflows/pages.yml](.github/workflows/pages.yml) on every push to `main`.
+
 ```bash
 npm install
 npm run dev
